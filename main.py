@@ -5,9 +5,12 @@ from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.core.window import Window
 from kivy.uix.button import Button
+from kivy.config import Config
+
 from random import randint
 
 Window.clearcolor = (41 / 255, 43 / 255, 44 / 255, 1)
+Window.size = (324, 648)
 
 kvazar_names = ["Квин", "Азу", "Ари"]
 
@@ -35,10 +38,10 @@ class MyApp(App):
                                       background_color="#3C3F41",
                                       foreground_color="#FFFFFF")
         self.log_hp_label = Label()
-        self.damage_submit_btn = Button(text="Готово", on_press=self.damage_submit)
+        self.damage_submit_btn = Button(on_press=self.damage_submit, background_normal="imgs/damage.png")
         self.real_hp_label = Label(text="Текущие ХП Квазара:")
 
-        self.heal_submit_btn = Button(text="Похилить", on_press=self.heal_submit)
+        self.heal_submit_btn = Button(on_press=self.heal_submit, background_normal="imgs/heal.png")
         self.heal_log_label = Label()
         self.input_heal_kvin = TextInput(hint_text="Хил Квин",
                                          background_color="#3C3F41",
@@ -49,7 +52,7 @@ class MyApp(App):
         self.input_heal_ari = TextInput(hint_text="Хил Ари",
                                         background_color="#3C3F41",
                                         foreground_color="#FFFFFF")
-        self.rest_btn = Button(text="Отдых", on_press=self.rest_btn_pressed)
+        self.rest_btn = Button(on_press=self.rest_btn_pressed, background_normal="imgs/campfire.jfif")
         self.set_hp_btn = Button(text="Установить", on_press=self.set_hp)
 
     def refresh_real_hp(self):
