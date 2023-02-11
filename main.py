@@ -10,7 +10,7 @@ from kivy.config import Config
 from random import randint
 
 Window.clearcolor = (41 / 255, 43 / 255, 44 / 255, 1)
-Window.size = (324, 648)
+# Window.size = (324, 648)
 
 kvazar_names = ["Квин", "Азу", "Ари"]
 
